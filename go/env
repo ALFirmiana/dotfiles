@@ -1,0 +1,2 @@
+GOPROXY=https://goproxy.cn
+GOPATH=/home/Firmiana/.local/share/go
