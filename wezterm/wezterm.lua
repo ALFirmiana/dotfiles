@@ -61,8 +61,6 @@ config.keys = {
 	{ key = "N", mods = "SHIFT|CTRL", action = act.SpawnWindow },
 	-- Ctrl+Shift+T 新 tab
 	{ key = "T", mods = "SHIFT|CTRL", action = act.ShowLauncher },
-	-- Ctrl+Shift+Enter 显示启动菜单
-	{ key = "Enter", mods = "SHIFT|CTRL", action = act.ShowLauncherArgs({ flags = "FUZZY|TABS|LAUNCH_MENU_ITEMS" }) },
 	-- Ctrl+Shift+V 粘贴剪切板的内容
 	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 	-- Ctrl+Shift+W 关闭 tab 且不进行确认
