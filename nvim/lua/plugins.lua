@@ -92,7 +92,7 @@ require("lazy").setup({
 			require("config.markdown-preview")
 		end,
 	},
-	"h-hg/fcitx.nvim",
+	--"h-hg/fcitx.nvim",
 	-- jupyter notebook
 	{
 		"meatballs/notebook.nvim",

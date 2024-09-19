@@ -7,4 +7,5 @@ else
 	require("plugins")
 	require("colorscheme")
 	require("lsp")
+    require("im")
 end
