@@ -1,0 +1,11 @@
+[Default Applications]
+x-scheme-handler/clash=clash-verge.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-QAZWQ2.desktop
+message/rfc822=userapp-Thunderbird-QAZWQ2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-QAZWQ2.desktop
+x-scheme-handler/bilipc=bilibili.desktop
+application/pdf=org.pwmt.zathura.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-QAZWQ2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-QAZWQ2.desktop;
