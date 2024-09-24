@@ -54,7 +54,7 @@ local on_attach = function(client, bufnr)
 			async = true,
 			-- Only request null-ls for formatting
 			filter = function(client)
-				return client.name == "null-ls"
+				return client.name == "pylsp" or client.name == "null-ls"
 			end,
 		})
 	end, bufopts)
