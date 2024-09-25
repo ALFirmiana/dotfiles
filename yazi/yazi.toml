@@ -58,6 +58,8 @@ play = [
 
 [open]
 rules = [
+    # Latex
+    { name = "*.tex", use = ["edit", "open"]},
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
