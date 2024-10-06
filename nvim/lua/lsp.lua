@@ -66,6 +66,16 @@ end
 -- 2. add configuration below
 lspconfig.pylsp.setup({
 	on_attach = on_attach,
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					maxLineLength = 120,
+					ignore = { "W391" },
+				},
+			},
+		},
+	},
 })
 
 lspconfig.lua_ls.setup({
