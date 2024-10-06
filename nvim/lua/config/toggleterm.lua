@@ -7,6 +7,5 @@ end
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
 
 toggleterm.setup({
-	open_mapping = [[<c-`>]],
-	shell = "fish",
+	open_mapping = [[<c-\>]],
 })
