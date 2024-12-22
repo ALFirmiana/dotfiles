@@ -64,7 +64,7 @@ config.keys = {
 	-- Ctrl+Shift+V 粘贴剪切板的内容
 	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 	-- Ctrl+Shift+W 关闭 tab 且不进行确认
-	{ key = "C", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = false }) },
+	{ key = "W", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = false }) },
 	-- Ctrl+Shift+PageUp 向上滚动一页
 	{ key = "PageUp", mods = "SHIFT|CTRL", action = act.ScrollByPage(-1) },
 	-- Ctrl+Shift+PageDown 向下滚动一页
