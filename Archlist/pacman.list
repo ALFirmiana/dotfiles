@@ -2,8 +2,10 @@ alsa-utils
 archlinuxcn-keyring
 base
 base-devel
+biber
 btrfs-progs
 chicken
+cmake
 cronie
 docker
 docker-compose
@@ -16,7 +18,6 @@ fcitx5-rime
 fd
 fisher
 glfw
-go-musicfox-git
 grub
 grub-btrfs
 hdf5-openmpi
@@ -85,12 +86,15 @@ tofi
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-liberation
+unrar
 unzip
 vim
 waybar
 wezterm
+xclip
 xorg-xlsclients
 yay
 yazi
 zathura
 zathura-pdf-poppler
+zip
