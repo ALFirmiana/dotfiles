@@ -46,6 +46,9 @@ mason_null_ls.setup({
 
 null_ls.setup({
 	sources = {
-        require("none-ls.formatting.latexindent")
-    },
+		require("none-ls.formatting.latexindent"),
+		null_ls.builtins.formatting.clang_format.with({
+			extra_args = { "--fallback-style=Microsoft" },
+		}),
+	},
 })

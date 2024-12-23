@@ -57,6 +57,7 @@ local on_attach = function(client, bufnr)
 				return client.name == "pylsp" or client.name == "null-ls"
 			end,
 		})
+		vim.cmd("TSBufEnable highlight")
 	end, bufopts)
 end
 
