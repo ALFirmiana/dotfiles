@@ -1,44 +1,62 @@
--- define common options
-local opts = {
-	noremap = true, -- non-recursive
-	silent = true, -- do not show message
-}
+-- [[ Basic Keymaps ]]
+--  See `:help vim.keymap.set()`
 
------------------
--- Normal mode --
------------------
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Hint: see `:h vim.map.set()`
--- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<C-\\>", ":vsplit new<CR>", opts)
-vim.keymap.set("n", "<C-->", ":close<CR>", opts)
-vim.keymap.set("n", "<C-S-h>", ":BufferLineCyclePrev<CR>", opts)
-vim.keymap.set("n", "<C-S-l>", ":BufferLineCycleNext<CR>", opts)
-vim.keymap.set("n", "<leader>q", ":bd<CR>", opts)
--- Resize with arrows
--- delta: 2 lines
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Diagnostic keymaps
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- TIP: Disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<C-\\>", ":vsplit new<CR>")
+vim.keymap.set("n", "<C-S-\\>", ":split new<CR>")
+vim.keymap.set("n", "<C-->", ":close<CR>")
+vim.keymap.set("n", "<C-S-h>", ":bprevious<CR>")
+vim.keymap.set("n", "<C-S-l>", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bd", ":bp<bar>bd #<CR>", {desc="Close current buffer"})
 
 -- Quick move
-vim.keymap.set({ "v", "n" }, "J", "5j", opts)
-vim.keymap.set({ "v", "n" }, "K", "5k", opts)
+vim.keymap.set({ "v", "n" }, "J", "5j")
+vim.keymap.set({ "v", "n" }, "K", "5k")
 
 -- Add blank line
-vim.keymap.set("n", "<CR>", "o<ESC>", opts)
-vim.keymap.set("n", "<S-CR>", "O<ESC>", opts)
------------------
--- Visual mode --
------------------
+vim.keymap.set("n", "<CR>", "o<ESC>")
+vim.keymap.set("n", "<S-CR>", "O<ESC>")
 
--- Hint: start visual mode with the same area as the previous area and the same mode
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
+-- vim: ts=2 sts=2 sw=2 et
