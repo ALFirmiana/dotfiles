@@ -5,13 +5,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local mux = wezterm.mux
 -- 透明背景
-config.window_background_opacity = 0.65
+config.window_background_opacity = 0.8
 --取消windows默认任务栏
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.hide_tab_bar_if_only_one_tab=true
-wezterm.on('format-window-title', function()
-    local title = "(<ゝω・) 綺羅星☆ "
-    return title
+config.hide_tab_bar_if_only_one_tab = true
+wezterm.on("format-window-title", function()
+	local title = "(<ゝω・) 綺羅星☆ "
+	return title
 end)
 --config.window_decorations="NONE"
 --关闭时不进行确认
@@ -22,9 +22,9 @@ config.enable_wayland = false
 --指定字体
 config.font = wezterm.font_with_fallback({
 	"JetBrains Mono",
-    "Noto Sans Mono CJK SC"
+	"Noto Sans Mono CJK SC",
 })
-config.font_size=14
+config.font_size = 14
 
 --指定配色
 config.color_scheme = "Catppuccin Macchiato"
