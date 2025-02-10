@@ -59,6 +59,9 @@ require("lazy").setup({
 	-- latex and markdown
 	require("plugins/custom/vimtex"),
 	require("plugins/custom/markdown-preview"),
+
+  -- jupyter notebook
+  require("plugins/custom/jupyter")
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

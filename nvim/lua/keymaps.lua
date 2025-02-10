@@ -42,8 +42,8 @@ vim.keymap.set({ "v", "n" }, "J", "5j")
 vim.keymap.set({ "v", "n" }, "K", "5k")
 
 -- Add blank line
-vim.keymap.set("n", "<CR>", "o<ESC>")
-vim.keymap.set("n", "<S-CR>", "O<ESC>")
+-- vim.keymap.set("n", "<CR>", "o<ESC>")
+-- vim.keymap.set("n", "<S-CR>", "O<ESC>")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
