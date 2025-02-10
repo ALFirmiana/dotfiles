@@ -8,6 +8,8 @@ return {
 	dependencies = { "hrsh7th/nvim-cmp" },
 	config = function()
 		require("nvim-autopairs").setup({})
+		-- set rules
+		local Rule = require("nvim-autopairs.rule")
 		require("nvim-autopairs").add_rules({
 			--disable autopairs of ' and ` for scmc and scheme
 			Rule("`", "", { "scmc", "scheme" }),
