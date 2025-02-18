@@ -12,4 +12,6 @@ set -g fish_greeting ""
 
 set -U EDITOR nvim
 
-set -x PYTHONPATH $PYTHONPATH /home/Firmiana/Data/simulations/misc
+set -x PYTHONPATH $PYTHONPATH $HOME/.local/misc
+
+set -x PATH $PATH $HOME/.local/misc
