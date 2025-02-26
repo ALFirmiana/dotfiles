@@ -30,6 +30,7 @@ jupyterlab
 lazygit
 less
 lib32-nvidia-utils
+libtiff5
 linux
 linux-firmware
 mako
@@ -53,6 +54,7 @@ pulseaudio
 python-h5py-openmpi
 python-matplotlib
 python-numpy
+python-pynvim
 python-scipy
 qbittorrent-nox
 qt6-wayland
@@ -85,6 +87,7 @@ texlive-xetex
 thunderbird
 timeshift
 tofi
+tree-sitter-cli
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-liberation
@@ -93,8 +96,10 @@ unzip
 vim
 waybar
 wezterm
+wget
 xclip
 xorg-xlsclients
+xwayland-satellite
 yay
 yazi
 zathura
