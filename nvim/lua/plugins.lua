@@ -55,6 +55,9 @@ require("lazy").setup({
 
 	require("plugins/toggleterm"),
 
+  -- AI assistant
+  require("plugins/llm"),
+
 	-- language plugins and custom
 	-- latex and markdown
 	require("plugins/custom/vimtex"),
