@@ -21,6 +21,7 @@ config.enable_wayland = false
 
 --指定字体
 config.font = wezterm.font_with_fallback({
+    "Maple Mono NF CN",
 	"JetBrains Mono",
 	"Noto Sans Mono CJK SC",
 })
