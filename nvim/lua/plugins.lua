@@ -55,17 +55,18 @@ require("lazy").setup({
 
 	require("plugins/toggleterm"),
 
-  -- AI assistant
-  require("plugins/llm"),
-  require("plugins.avante"),
+	-- AI assistant
+	require("plugins/llm"),
+	require("plugins.avante"),
 
 	-- language plugins and custom
 	-- latex and markdown
 	require("plugins/custom/vimtex"),
 	require("plugins/custom/markdown-preview"),
+	require("plugins/custom/render-markdown"),
 
-  -- jupyter notebook
-  require("plugins/custom/jupyter")
+	-- ipython
+	require("plugins/custom/ipython"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

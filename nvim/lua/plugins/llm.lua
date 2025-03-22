@@ -5,7 +5,7 @@ return {
 		cmd = { "LLMSessionToggle", "LLMSelectedTextHandler", "LLMAppHandler" },
 		config = function()
 			require("llm").setup({
-                url = "https://api.deepseek.com/chat/completions",
+				url = "https://api.deepseek.com/chat/completions",
 				model = "deepseek-chat",
 				api_type = "openai",
 				max_tokens = 4096,
@@ -49,7 +49,7 @@ return {
 		keys = {
 			{ "<leader>ac", mode = "n", "<cmd>LLMSessionToggle<cr>", desc = "AI chat" },
 			{
-				"<leader>ae",
+				"<leader>ac",
 				mode = "v",
 				"<cmd>LLMSelectedTextHandler 请解释下面这段代码<cr>",
 				desc = "AI explain",
