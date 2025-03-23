@@ -27,7 +27,7 @@ require("lazy").setup({
 	require("plugins/gitsigns"),
 
 	-- basic tools
-	"h-hg/fcitx.nvim",
+	require("plugins/im"),
 
 	require("plugins/which-key"),
 
@@ -56,7 +56,7 @@ require("lazy").setup({
 	require("plugins/toggleterm"),
 
 	-- AI assistant
-	require("plugins/llm"),
+	-- require("plugins/llm"),
 	require("plugins.avante"),
 
 	-- language plugins and custom
