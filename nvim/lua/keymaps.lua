@@ -35,7 +35,7 @@ vim.keymap.set("n", "<C-S-\\>", ":split new<CR>")
 vim.keymap.set("n", "<C-->", ":close<CR>")
 vim.keymap.set("n", "<C-S-h>", ":bprevious<CR>")
 vim.keymap.set("n", "<C-S-l>", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bd", ":bp<bar>bd #<CR>", {desc="Close current buffer"})
+vim.keymap.set("n", "<leader>dd", ":bp<bar>bd #<CR>", {desc="Close current buffer"})
 
 -- Quick move
 vim.keymap.set({ "v", "n" }, "J", "5j")
