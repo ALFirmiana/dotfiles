@@ -16,7 +16,7 @@ end)
 --关闭时不进行确认
 config.window_close_confirmation = "NeverPrompt"
 
-config.enable_wayland = true
+config.enable_wayland = false
 
 --指定字体
 config.font = wezterm.font_with_fallback({
@@ -24,7 +24,7 @@ config.font = wezterm.font_with_fallback({
 	"Noto Sans Mono CJK SC",
 	"JetBrains Mono",
 })
-config.font_size = 11
+config.font_size = 18
 
 --指定配色
 config.color_scheme = "Catppuccin Macchiato"
