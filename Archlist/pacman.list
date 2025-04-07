@@ -21,7 +21,6 @@ fcitx5-rime
 fd
 fisher
 frpc
-gdb
 glfw
 grub
 grub-btrfs
@@ -37,6 +36,7 @@ lib32-nvidia-utils
 libtiff5
 linux
 linux-firmware
+lldb
 mako
 man-db
 mpc
@@ -65,6 +65,7 @@ qt6-wayland
 rime-ice-pinyin-git
 ripgrep
 steam
+syncthing
 system-config-printer
 texlive-basic
 texlive-bibtexextra
@@ -111,3 +112,4 @@ yazi
 zathura
 zathura-pdf-poppler
 zip
+zotero
