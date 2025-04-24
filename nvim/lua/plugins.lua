@@ -12,9 +12,13 @@
 require("lazy").setup({
 
 	-- theme and style
-	require("plugins/colorscheme"),
+	require("theme/colorscheme"),
 
-	require("plugins/lualine"),
+	require("theme/lualine"),
+
+	require("theme/smoothcursor"),
+
+	--require("plugins/dashboard"),
 	-- use lualine instead of bufferline. You can change if freely.
 	-- require("plugins/bufferline")
 
