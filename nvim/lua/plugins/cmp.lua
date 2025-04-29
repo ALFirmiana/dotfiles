@@ -65,8 +65,8 @@ return {
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					-- Use <C-b/f> to scroll the docs
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-h>"] = cmp.mapping.scroll_docs(-4),
+					["<C-l>"] = cmp.mapping.scroll_docs(4),
 					-- Use <C-k/j> to switch in items
 					["<C-k>"] = cmp.mapping.select_prev_item(),
 					["<C-j>"] = cmp.mapping.select_next_item(),
@@ -78,9 +78,7 @@ return {
 					-- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
 					["<Tab>"] = cmp.mapping(function(fallback)
 						-- Hint: if the completion menu is visible select next one
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
+						if luasnip.expand_or_jumpable() then
 							luasnip.expand_or_jump()
 						elseif has_words_before() then
 							cmp.complete()
@@ -89,9 +87,7 @@ return {
 						end
 					end, { "i", "s" }), -- i - insert mode; s - select mode
 					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
+						if luasnip.jumpable(-1) then
 							luasnip.jump(-1)
 						else
 							fallback()
@@ -101,19 +97,15 @@ return {
 						select = true,
 						behavior = cmp.ConfirmBehavior.Replace,
 					}),
-					-- ["<CR>"] = cmp.mapping(function(fallback)
+					-- ["<Esc>"] = cmp.mapping(function(fallback)
 					-- 	if cmp.visible() then
-					-- 		if luasnip.expandable() then
-					-- 			luasnip.expand()
-					-- 		else
-					-- 			cmp.confirm({
-					-- 				select = true,
-					-- 			})
-					-- 		end
+					-- 		cmp.abort()
+					-- 	elseif luasnip.expandable() or luasnip.jumpable() then
+					-- 		luasnip.unlink_current()
 					-- 	else
 					-- 		fallback()
 					-- 	end
-					-- end),
+					-- end, { "i", "s" }),
 				}),
 				sources = {
 					{
