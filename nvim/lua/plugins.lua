@@ -59,15 +59,17 @@ require("lazy").setup({
 
 	require("plugins/toggleterm"),
 
+	require("plugins/render-markdown"),
+
 	-- AI assistant
 	-- require("plugins/llm"),
-	require("plugins.avante"),
+	-- require("plugins.avante"),
+	require("plugins.codecompanion"),
 
 	-- language plugins and custom
 	-- latex and markdown
 	require("plugins/custom/vimtex"),
 	require("plugins/custom/markdown-preview"),
-	require("plugins/custom/render-markdown"),
 
 	-- ipython
 	require("plugins/custom/ipython"),
