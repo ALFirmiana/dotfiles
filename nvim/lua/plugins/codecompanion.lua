@@ -25,7 +25,20 @@ return {
 				end,
 			},
 			strategies = {
-				chat = { adapter = "deepseek" },
+				chat = {
+					adapter = "deepseek",
+					roles = {
+						---The header name for the LLM's messages
+						---@type string|fun(adapter: CodeCompanion.Adapter): string
+						llm = function(adapter)
+							return "  (" .. adapter.formatted_name .. ")"
+						end,
+
+						---The header name for your messages
+						---@type string
+						user = "  (Me)",
+					},
+				},
 				inline = {
 					adapter = "deepseek",
 					keymaps = {
@@ -58,6 +71,6 @@ return {
 		vim.keymap.set("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "Toggle Code Companion Chat" })
 		vim.keymap.set("v", "<leader>ae", "<cmd>CodeCompanion /explain<cr>", { desc = "AI explain" })
 		vim.keymap.set("v", "<leader>af", "<cmd>CodeCompanion /fix<cr>", { desc = "AI fix" })
-		vim.keymap.set("n", "v", "<leader>aa", "<cmd>CodeCompanionActions<cr>", { desc = "AI action" })
+		vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", { desc = "AI action" })
 	end,
 }
