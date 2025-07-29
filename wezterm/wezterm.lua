@@ -4,29 +4,73 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 local mux = wezterm.mux
+
 -- 透明背景
 config.window_background_opacity = 0.6
---取消默认任务栏
+
+-- 取消默认任务栏
 config.window_decorations = "NONE"
-config.hide_tab_bar_if_only_one_tab = true
+-- tabline.wez
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		icons_enabled = true,
+		theme = "Catppuccin Mocha",
+		tabs_enabled = true,
+		theme_overrides = {},
+		section_separators = {
+			left = wezterm.nerdfonts.pl_left_hard_divider,
+			right = wezterm.nerdfonts.pl_right_hard_divider,
+		},
+		component_separators = {
+			left = wezterm.nerdfonts.pl_left_soft_divider,
+			right = wezterm.nerdfonts.pl_right_soft_divider,
+		},
+		tab_separators = {
+			left = wezterm.nerdfonts.pl_left_hard_divider,
+			right = wezterm.nerdfonts.pl_right_hard_divider,
+		},
+	},
+	sections = {
+		tabline_a = {},
+		tabline_b = {},
+		tabline_c = { "datetime", "battery" },
+		tab_active = {
+			"index",
+			-- { 'parent', padding = 0 },
+			"/",
+			{ "cwd", padding = { left = 0, right = 1 } },
+			{ "zoomed", padding = 0 },
+		},
+		tab_inactive = { "index", { "process", padding = { left = 0, right = 1 } } },
+		tabline_x = { "cpu", "ram" },
+		tabline_y = {},
+		tabline_z = {},
+	},
+	extensions = {},
+})
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
+
+-- 设置窗口标题
 wezterm.on("format-window-title", function()
-    local title = "(<ゝω・) 綺羅星☆ "
+	local title = "(<ゝω・) 綺羅星☆ "
 	return title
 end)
---关闭时不进行确认
+-- 关闭时不进行确认
 config.window_close_confirmation = "NeverPrompt"
 
 config.enable_wayland = true
 
---指定字体
+-- 指定字体
 config.font = wezterm.font_with_fallback({
-    "Maple Mono NF CN",
+	"Maple Mono NF CN",
 	"Noto Sans Mono CJK SC",
 	"JetBrains Mono",
 })
 config.font_size = 12
 
---指定配色
+-- 指定配色
 config.color_scheme = "Catppuccin Macchiato"
 
 --全屏启动
@@ -36,15 +80,14 @@ config.color_scheme = "Catppuccin Macchiato"
 --gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
 --  gui_window:maximize()
 --end)
-
 config.native_macos_fullscreen_mode = true
 
 config.audible_bell = "Disabled"
 
---取消热键
+-- 取消热键
 config.disable_default_key_bindings = true
 
---设置自定义快捷键
+-- 设置自定义快捷键
 local act = wezterm.action
 config.keys = {
 	-- Ctrl+Shift+Tab 遍历 tab
