@@ -19,7 +19,7 @@ return {
 						},
 						schema = {
 							model = {
-								default = "deepseek-chat",
+								default = "deepseek-reasoner",
 							},
 						},
 					})
