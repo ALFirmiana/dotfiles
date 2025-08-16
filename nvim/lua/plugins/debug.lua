@@ -21,6 +21,9 @@ return {
 		-- Installs the debug adapters for you
 		"williamboman/mason.nvim",
 		"jay-babu/mason-nvim-dap.nvim",
+
+		-- Language specific extensions
+		"mfussenegger/nvim-dap-python",
 	},
 	keys = {
 		-- Basic debugging keymaps, feel free to change to your liking!
@@ -104,6 +107,7 @@ return {
 			},
 		})
 
+		-- C and Cpp
 		dap.adapters.gdb = {
 			type = "executable",
 			command = "codelldb",
@@ -122,6 +126,9 @@ return {
 			},
 		}
 		dap.configurations.cpp = dap.configurations.c
+
+		-- Python
+		require("dap-python").setup("python")
 
 		-- Dap virtual text setup
 		dapvt.setup({
