@@ -12,18 +12,20 @@ return {
 		})
 		require("codecompanion").setup({
 			adapters = {
-				deepseek = function()
-					return require("codecompanion.adapters").extend("deepseek", {
-						env = {
-							api_key = os.getenv("LLM_KEY"),
-						},
-						schema = {
-							model = {
-								default = "deepseek-reasoner",
+				http = {
+					deepseek = function()
+						return require("codecompanion.adapters").extend("deepseek", {
+							env = {
+								api_key = os.getenv("LLM_KEY"),
 							},
-						},
-					})
-				end,
+							schema = {
+								model = {
+									default = "deepseek-reasoner",
+								},
+							},
+						})
+					end,
+				},
 			},
 			strategies = {
 				chat = {
