@@ -18,6 +18,7 @@ require("lazy").setup({
 
 	require("theme/smoothcursor"),
 
+	require("theme/smearcursor"),
 	--require("plugins/dashboard"),
 	-- use lualine instead of bufferline. You can change if freely.
 	-- require("plugins/bufferline")
@@ -70,7 +71,7 @@ require("lazy").setup({
 	-- latex and markdown
 	require("plugins/custom/vimtex"),
 	require("plugins/custom/markdown-preview"),
-  require("plugins/custom/typst-proview"),
+	require("plugins/custom/typst-proview"),
 
 	-- ipython
 	require("plugins/custom/ipython"),
