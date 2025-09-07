@@ -5,6 +5,8 @@ base
 base-devel
 bear
 biber
+blueman
+bluez
 btrfs-progs
 chicken
 cmake
@@ -41,6 +43,7 @@ linux-firmware
 lldb
 mako
 man-db
+mihomo
 mpc
 mpd
 neovim
@@ -99,6 +102,7 @@ tofi
 tree-sitter-cli
 ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-maplemono-nf-cn-unhinted
 ttf-twemoji
 typst
 unrar
@@ -118,5 +122,6 @@ yazi
 zathura
 zathura-djvu
 zathura-pdf-poppler
+zen-browser-i18n-zh-cn
 zip
 zotero
