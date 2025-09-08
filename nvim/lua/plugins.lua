@@ -9,92 +9,88 @@
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require("lazy").setup({
+require('lazy').setup({
+  -- -- -- -- -- -- -- -- -- -- -- --
+  -- mini.nvim
+  require 'plugins.mini',
 
-	-- theme and style
-	require("theme/colorscheme"),
+  -- -- -- -- -- -- -- -- -- -- -- --
+  -- theme and style
+  require 'theme.colorscheme',
 
-	require("theme/lualine"),
+  require 'theme.smoothcursor',
 
-	require("theme/smoothcursor"),
+  require 'theme.smearcursor',
 
-	require("theme/smearcursor"),
-	--require("plugins/dashboard"),
-	-- use lualine instead of bufferline. You can change if freely.
-	-- require("plugins/bufferline")
+  -- -- -- -- -- -- -- -- -- -- -- --
+  -- texts style
+  require 'plugins.gitsigns',
 
-	require("plugins/indent_line"),
+  require 'plugins.todo-comments',
 
-	require("plugins/sentiment"),
+  require 'plugins.render-markdown',
+  -- -- -- -- -- -- -- -- -- -- -- --
+  -- useful tools
+  require 'plugins.tools.im',
 
-	require("plugins/todo-comments"),
+  require 'plugins.tools.neo-tree',
 
-	require("plugins/gitsigns"),
+  require 'plugins.tools.which-key',
 
-	-- basic tools
-	require("plugins/im"),
+  require 'plugins.tools.telescope',
 
-	require("plugins/which-key"),
+  require 'plugins.tools.lastplace',
 
-	require("plugins/lastplace"),
+  require 'plugins.tools.autopairs',
 
-	require("plugins/autopairs"),
+  require 'plugins.tools.toggleterm',
 
-	require("plugins/surround"),
+  -- AI assistent
+  require 'plugins.tools.codecompanion',
 
-	require("plugins/telescope"),
+  -- -- -- -- -- -- -- -- -- -- -- --
+  -- language tools
+  -- lsp format cmp treesitter dbg lint
+  require 'plugins.language.lspconfig',
 
-	require("plugins/lspconfig"),
+  require 'plugins.language.conform',
 
-	require("plugins/conform"),
+  require 'plugins.language.blink-cmp',
 
-	require("plugins/cmp"),
+  require 'plugins.language.treesitter',
 
-	require("plugins/treesitter"),
+  require 'plugins.language.debug',
 
-	require("plugins/neo-tree"),
+  require 'plugins.language.lint',
 
-	require("plugins/debug"),
+  -- language plugins and custom
+  -- latex and markdown
+  require 'plugins/custom/vimtex',
+  require 'plugins/custom/markdown-preview',
+  require 'plugins/custom/typst-proview',
 
-	--require("plugins/lint"),
-
-	require("plugins/toggleterm"),
-
-	require("plugins/render-markdown"),
-
-	-- AI assistant
-	-- require("plugins/llm"),
-	-- require("plugins.avante"),
-	require("plugins.codecompanion"),
-
-	-- language plugins and custom
-	-- latex and markdown
-	require("plugins/custom/vimtex"),
-	require("plugins/custom/markdown-preview"),
-	require("plugins/custom/typst-proview"),
-
-	-- ipython
-	require("plugins/custom/ipython"),
+  -- ipython
+  require 'plugins/custom/ipython',
 }, {
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
-	},
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = '⌘',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
+      init = '⚙',
+      keys = '🗝',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
+      lazy = '💤 ',
+    },
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et
