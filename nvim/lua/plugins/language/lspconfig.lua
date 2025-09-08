@@ -234,11 +234,7 @@ return {
 
         texlab = {},
 
-        tinymist = {
-          settings = {
-            exportPdf = 'onSave',
-          },
-        },
+        tinymist = {},
 
         marksman = {},
 

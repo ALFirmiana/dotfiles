@@ -67,7 +67,7 @@ require('lazy').setup({
   -- latex and markdown
   require 'plugins/custom/vimtex',
   require 'plugins/custom/markdown-preview',
-  require 'plugins/custom/typst-proview',
+  require 'plugins/custom/typst-preview',
 
   -- ipython
   require 'plugins/custom/ipython',
