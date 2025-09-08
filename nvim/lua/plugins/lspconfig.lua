@@ -208,6 +208,12 @@ return {
 
 				texlab = {},
 
+				tinymist = {
+					settings = {
+						exportPdf = "onSave",
+					},
+				},
+
 				marksman = {},
 
 				lua_ls = {
@@ -224,6 +230,8 @@ return {
 						},
 					},
 				},
+
+				bashls = {},
 			}
 
 			-- Ensure the servers and tools above are installed
@@ -245,6 +253,7 @@ return {
 				"clang-format",
 				"latexindent",
 				"prettier",
+				"typstyle",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
