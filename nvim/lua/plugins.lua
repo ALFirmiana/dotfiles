@@ -12,6 +12,8 @@
 require('lazy').setup({
   -- -- -- -- -- -- -- -- -- -- -- --
   -- mini.nvim
+  -- contain several styles and tools
+  -- ai surround statusline tabline indentscope
   require 'plugins.mini',
 
   -- -- -- -- -- -- -- -- -- -- -- --
@@ -24,11 +26,11 @@ require('lazy').setup({
 
   -- -- -- -- -- -- -- -- -- -- -- --
   -- texts style
-  require 'plugins.gitsigns',
+  require 'plugins.style.gitsigns',
 
-  require 'plugins.todo-comments',
+  require 'plugins.style.todo-comments',
 
-  require 'plugins.render-markdown',
+  require 'plugins.style.render-markdown',
   -- -- -- -- -- -- -- -- -- -- -- --
   -- useful tools
   require 'plugins.tools.im',
@@ -65,12 +67,12 @@ require('lazy').setup({
 
   -- language plugins and custom
   -- latex and markdown
-  require 'plugins/custom/vimtex',
-  require 'plugins/custom/markdown-preview',
-  require 'plugins/custom/typst-preview',
+  require 'plugins.custom.vimtex',
+  require 'plugins.custom.markdown-preview',
+  require 'plugins.custom.typst-preview',
 
   -- ipython
-  require 'plugins/custom/ipython',
+  require 'plugins.custom.ipython',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
