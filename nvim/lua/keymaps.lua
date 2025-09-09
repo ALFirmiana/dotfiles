@@ -38,8 +38,11 @@ vim.keymap.set('n', '<C-S-l>', ':bnext<CR>')
 vim.keymap.set('n', '<leader>dd', ':bp<bar>bd #<CR>', { desc = 'Close current buffer' })
 
 -- Quick move
-vim.keymap.set({ 'v', 'n' }, 'J', '5j')
-vim.keymap.set({ 'v', 'n' }, 'K', '5k')
+vim.keymap.set({ 'v', 'n' }, 'J', '5gj')
+vim.keymap.set({ 'v', 'n' }, 'K', '5gk')
+-- Breakline move
+vim.keymap.set({ 'v', 'n' }, 'j', 'gj')
+vim.keymap.set({ 'v', 'n' }, 'k', 'gk')
 
 -- Add blank line
 -- vim.keymap.set("n", "<CR>", "o<ESC>")
