@@ -36,8 +36,8 @@ return {
         cpp = { 'clang_format' },
         --python = { "black", lsp_format = true },
         python = { lsp_format = true },
-        latex = { 'latexindent' },
-        typst = { 'typstyle' },
+        latex = { lsp_format = true },
+        typst = { lsp_format = true },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

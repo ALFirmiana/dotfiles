@@ -17,7 +17,7 @@ return {
       Rule("'", '', { 'scmc', 'scheme' }),
       -- enable autopairs of $ for typst
       Rule('$', '$', { 'typst' }):with_move(cond.done()),
-      Rule(' ', ' ', { 'typst' }):with_pair(cond.after_regex '$'):with_move(cond.done()),
+      Rule(' ', ' ', { 'typst' }):with_pair(cond.before_text '$' and cond.after_text '$'):with_move(cond.done()),
     }
   end,
 }

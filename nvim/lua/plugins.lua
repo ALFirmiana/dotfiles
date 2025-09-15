@@ -66,8 +66,6 @@ require('lazy').setup({
   require 'plugins.language.lint',
 
   -- language plugins and custom
-  -- latex and markdown
-  require 'plugins.custom.vimtex',
   require 'plugins.custom.markdown-preview',
   require 'plugins.custom.typst-preview',
 
