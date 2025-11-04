@@ -3,7 +3,7 @@ chatbox-bin
 electron21-bin
 electron28-bin
 fcitx5-skin-fluentdark-git
-go-musicfox
+go-musicfox-bin
 hyprsome-git
 kd-bin
 mathematica
@@ -11,6 +11,9 @@ nerd-fonts-noto-sans-mono
 pacmixer
 teamspeak
 timeshift-autosnap
+ttf-twemoji
 ttf-wps-fonts
+uuplugin-bin
 wps-office-cn
 wps-office-mui-zh-cn
+zen-browser-i18n-zh-cn

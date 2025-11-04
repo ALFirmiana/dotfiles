@@ -22,6 +22,7 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-rime
 fd
+ffmpeg4.4
 fisher
 frpc
 glfw
@@ -103,7 +104,6 @@ tree-sitter-cli
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-maplemono-nf-cn-unhinted
-ttf-twemoji
 typst
 unrar
 unzip
@@ -122,6 +122,5 @@ yazi
 zathura
 zathura-djvu
 zathura-pdf-poppler
-zen-browser-i18n-zh-cn
 zip
 zotero
