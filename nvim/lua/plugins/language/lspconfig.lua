@@ -220,14 +220,23 @@ return {
 
         clangd = {},
 
-        pylsp = {
+        pyright = {
           settings = {
-            pylsp = {
-              plugins = {
-                pycodestyle = {
-                  maxLineLength = 120,
-                  ignore = { 'W391' },
-                },
+            analysis = {
+              typeCheckingMode = 'basic', -- 或 "strict"
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = 'workspace',
+            },
+          },
+        },
+
+        ruff = {
+          init_options = {
+            settings = {
+              lineLength = 150,
+              lint = {
+                ignore = { 'E731' },
               },
             },
           },

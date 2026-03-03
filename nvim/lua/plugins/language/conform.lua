@@ -34,7 +34,7 @@ return {
         lua = { 'stylua' },
         c = { 'clang_format' },
         cpp = { 'clang_format' },
-        --python = { "black", lsp_format = true },
+
         python = { lsp_format = true },
         latex = { lsp_format = true },
         typst = { lsp_format = true },

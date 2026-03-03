@@ -18,6 +18,14 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.expandtab = false
   end,
 })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'scheme', 'cscheme' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
