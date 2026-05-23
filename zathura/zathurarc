@@ -1,4 +1,4 @@
-map j feedkeys "<C-Down>"
-map k feedkeys "<C-Up>"
+#map j feedkeys "<C-Down>"
+#map k feedkeys "<C-Up>"
 
 set selection-clipboard clipboard

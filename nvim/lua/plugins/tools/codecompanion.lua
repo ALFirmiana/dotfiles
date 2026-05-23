@@ -20,7 +20,7 @@ return {
 							},
 							schema = {
 								model = {
-									default = "deepseek-reasoner",
+									default = "deepseek-v4-pro",
 								},
 							},
 						})
