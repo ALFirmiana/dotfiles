@@ -5,8 +5,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local mux = wezterm.mux
 
+local is_mac = wezterm.target_triple:find("darwin") ~= nil
+
 -- 透明背景
 config.window_background_opacity = 0.6
+if is_mac then
+	config.macos_window_background_blur = 30
+end
 
 -- 取消默认任务栏
 config.window_decorations = "NONE"
@@ -68,19 +73,22 @@ config.font = wezterm.font_with_fallback({
 	"Noto Sans Mono CJK SC",
 	"JetBrains Mono",
 })
-config.font_size = 12
+if is_mac then
+	config.font_size = 14
+else
+	config.font_size = 12
+end
 
 -- 指定配色
 config.color_scheme = "Catppuccin Macchiato"
 
 --全屏启动
---wezterm.on('gui-startup', function(window)
---  local tab, pane, window = mux.spawn_window{}
---  local gui_window = window:gui_window();
---gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
---  gui_window:maximize()
---end)
-config.native_macos_fullscreen_mode = true
+--  wezterm.on('gui-startup', function(window)
+--    local tab, pane, window = mux.spawn_window{}
+--    local gui_window = window:gui_window();
+--  gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
+--    gui_window:maximize()
+--  end)
 
 config.audible_bell = "Disabled"
 
