@@ -106,14 +106,14 @@ config.keys = {
 	{ key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
 	-- Ctrl+Shift+- 字体减小
 	{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
-	-- Ctrl+Shift+C 复制选中区域
-	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+	-- mac: Cmd+C 复制选中区域 / 其他平台: Ctrl+Shift+C
+	{ key = "c", mods = is_mac and "SUPER" or "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+	-- mac: Cmd+V 粘贴剪切板的内容 / 其他平台: Ctrl+Shift+V
+	{ key = "v", mods = is_mac and "SUPER" or "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 	-- Ctrl+Shift+N 新窗口
 	{ key = "N", mods = "SHIFT|CTRL", action = act.SpawnWindow },
 	-- Ctrl+Shift+T 新 tab
 	{ key = "T", mods = "SHIFT|CTRL", action = act.ShowLauncher },
-	-- Ctrl+Shift+V 粘贴剪切板的内容
-	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 	-- Ctrl+Shift+W 关闭 tab 且不进行确认
 	{ key = "W", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = false }) },
 	-- Ctrl+Shift+PageUp 向上滚动一页
