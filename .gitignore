@@ -1,1 +1,5 @@
-nvim/lazy-lock.json
+# 运行时生成的文件（由应用写入，不纳入版本管理）
+nvim/.config/nvim/lazy-lock.json
+
+# macOS
+.DS_Store
