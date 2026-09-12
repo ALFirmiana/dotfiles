@@ -82,13 +82,11 @@ end
 -- 指定配色
 config.color_scheme = "Catppuccin Macchiato"
 
---全屏启动
---  wezterm.on('gui-startup', function(window)
---    local tab, pane, window = mux.spawn_window{}
---    local gui_window = window:gui_window();
---  gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
---    gui_window:maximize()
---  end)
+-- 全屏启动
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():toggle_fullscreen()
+end)
 
 config.audible_bell = "Disabled"
 
