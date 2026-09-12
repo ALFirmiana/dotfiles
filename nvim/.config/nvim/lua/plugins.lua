@@ -47,8 +47,8 @@ require('lazy').setup({
 
   require 'plugins.tools.toggleterm',
 
-  -- AI assistent
-  require 'plugins.tools.codecompanion',
+  -- AI Agent
+  require 'plugins.tools.goose',
 
   -- -- -- -- -- -- -- -- -- -- -- --
   -- language tools
