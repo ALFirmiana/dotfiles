@@ -69,6 +69,7 @@ require('lazy').setup({
   require 'plugins.custom.markdown-preview',
   require 'plugins.custom.typst-preview',
   require 'plugins.custom.vimtex',
+  require 'plugins.custom.csvview',
 
   -- ipython
   require 'plugins.custom.ipython',
