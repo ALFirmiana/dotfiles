@@ -7,6 +7,7 @@ return {
     ---@type CsvView.Options
     opts = {
       parser = {
+        delimiter = { ft = { tsv = '\t' } },
         comments = { '#', '//' },
       },
       view = {
@@ -23,7 +24,7 @@ return {
         jump_prev_row = { '<S-Enter>', mode = { 'n', 'v' } },
       },
     },
-    -- auto enable
+    -- Auto enable
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         group = vim.api.nvim_create_augroup('csvview_autostart', { clear = true }),
