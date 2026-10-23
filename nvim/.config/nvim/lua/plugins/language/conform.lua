@@ -35,9 +35,9 @@ return {
         c = { 'clang_format' },
         cpp = { 'clang_format' },
 
-        python = { lsp_format = true },
-        latex = { lsp_format = true },
-        typst = { lsp_format = true },
+        python = { lsp_format = 'fallback' },
+        latex = { lsp_format = 'fallback' },
+        typst = { lsp_format = 'fallback' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

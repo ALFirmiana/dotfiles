@@ -96,7 +96,11 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.cmd [[ au BufRead,BufNewFile *.sld set filetype=scheme ]]
-vim.cmd [[ au BufRead,BufNewFile *.sls set filetype=scheme ]]
-vim.cmd [[ au BUfRead,BufNewFile *.scmc set filetype=scmc ]]
+vim.filetype.add {
+  extension = {
+    sld = 'scheme',
+    sls = 'scheme',
+    scmc = 'scmc',
+  },
+}
 -- vim: ts=2 sts=2 sw=2 et

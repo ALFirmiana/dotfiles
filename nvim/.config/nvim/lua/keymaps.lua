@@ -30,12 +30,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<C-\\>', ':vsplit new<CR>')
-vim.keymap.set('n', '<C-S-\\>', ':split new<CR>')
-vim.keymap.set('n', '<C-->', ':close<CR>')
-vim.keymap.set('n', '<C-S-h>', ':bprevious<CR>')
-vim.keymap.set('n', '<C-S-l>', ':bnext<CR>')
-vim.keymap.set('n', '<leader>dd', ':bp<bar>bd #<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<C-\\>', '<Cmd>vnew<CR>')
+vim.keymap.set('n', '<C-S-\\>', '<Cmd>new<CR>')
+vim.keymap.set('n', '<C-->', '<Cmd>close<CR>')
+vim.keymap.set('n', '<C-S-h>', '<Cmd>bprevious<CR>')
+vim.keymap.set('n', '<C-S-l>', '<Cmd>bnext<CR>')
+vim.keymap.set('n', '<leader>dd', '<Cmd>bp<CR><Cmd>bd #<CR>', { desc = 'Close current buffer' })
 
 -- Quick move
 vim.keymap.set({ 'v', 'n' }, 'J', '5gj')

@@ -133,7 +133,7 @@ return {
 
     -- Dap virtual text setup
     dapvt.setup {
-      virt_text_pos = 'eol',
+      virt_text_pos = 'inline',
     }
 
     -- Dap UI setup

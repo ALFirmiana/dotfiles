@@ -1,4 +1,4 @@
-local uname = vim.loop.os_uname()
+local uname = vim.uv.os_uname()
 
 if uname.sysname == 'Linux' then
   return {

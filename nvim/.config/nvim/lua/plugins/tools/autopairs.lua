@@ -5,18 +5,24 @@ return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
   config = function()
-    require('nvim-autopairs').setup {
-      enable_check_bracket_line = false,
-    }
-    -- set rules
+    local npairs = require 'nvim-autopairs'
     local Rule = require 'nvim-autopairs.rule'
     local cond = require 'nvim-autopairs.conds'
-    require('nvim-autopairs').add_rules {
-      -- disable autopairs of ' and ` for scmc and scheme
-      Rule('`', '', { 'scmc', 'scheme' }),
-      Rule("'", '', { 'scmc', 'scheme' }),
-      -- enable autopairs of $ for typst
+
+    npairs.setup {
+      enable_check_bracket_line = false,
+    }
+
+    npairs.add_rules {
       Rule('$', '$', { 'typst' }):with_move(cond.done()),
     }
+
+    for _, pair in ipairs { '`', "'" } do
+      for _, rule in ipairs(npairs.get_rules(pair)) do
+        rule.not_filetypes = vim.list_extend(rule.not_filetypes or {}, { 'scmc', 'scheme' })
+      end
+    end
+
+    npairs.force_attach()
   end,
 }
