@@ -6,7 +6,11 @@ local function setup()
 		elseif cwd:ends_with("GroupMeeting") then
 			ya.emit("sort", { "alphabetical", reverse = true, dir_first = true })
 		else
-			ya.emit("sort", { "alphabetical", reverse = false, dir_first = true })
+			ya.emit("sort", {
+				rt.mgr.sort_by,
+				reverse   = rt.mgr.sort_reverse,
+				dir_first = rt.mgr.sort_dir_first,
+			})
 		end
 	end)
 end
