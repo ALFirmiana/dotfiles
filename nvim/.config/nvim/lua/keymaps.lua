@@ -5,7 +5,30 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
+-- Diagnostic Config & Keymaps
+--  See `:help vim.diagnostic.Opts`
+vim.diagnostic.config {
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+  -- Can switch between these as you prefer
+  virtual_text = true, -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+
+  -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+  jump = {
+    on_jump = function(_, bufnr)
+      vim.diagnostic.open_float {
+        bufnr = bufnr,
+        scope = 'cursor',
+        focus = false,
+      }
+    end,
+  },
+}
+
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -30,12 +53,11 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<C-\\>', '<Cmd>vnew<CR>')
-vim.keymap.set('n', '<C-S-\\>', '<Cmd>new<CR>')
-vim.keymap.set('n', '<C-->', '<Cmd>close<CR>')
-vim.keymap.set('n', '<C-S-h>', '<Cmd>bprevious<CR>')
-vim.keymap.set('n', '<C-S-l>', '<Cmd>bnext<CR>')
-vim.keymap.set('n', '<leader>dd', '<Cmd>bp<CR><Cmd>bd #<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<C-\\>', '<Cmd>vnew<CR>', { desc = 'New vertical split' })
+vim.keymap.set('n', '<C-_>', '<Cmd>close<CR>', { desc = 'Close current window' })
+vim.keymap.set('n', '<C-S-h>', '<Cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<C-S-l>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>dd', function() require('mini.bufremove').delete(0, false) end, { desc = 'Close current buffer' })
 
 -- Quick move
 vim.keymap.set({ 'v', 'n' }, 'J', '5gj')
@@ -57,9 +79,7 @@ vim.keymap.set({ 'v', 'n' }, 'k', 'gk')
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
+  callback = function() vim.hl.on_yank() end,
 })
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -100,10 +100,6 @@ config.keys = {
 	{ key = "Tab", mods = "SHIFT|CTRL", action = act.ActivateTabRelative(1) },
 	-- F11 切换全屏
 	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen },
-	-- Ctrl+Shift++ 字体增大
-	{ key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
-	-- Ctrl+Shift+- 字体减小
-	{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
 	-- mac: Cmd+C 复制选中区域 / 其他平台: Ctrl+Shift+C
 	{ key = "c", mods = is_mac and "SUPER" or "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
 	-- mac: Cmd+V 粘贴剪切板的内容 / 其他平台: Ctrl+Shift+V

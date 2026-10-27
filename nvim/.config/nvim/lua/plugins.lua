@@ -1,98 +1,64 @@
--- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
--- NOTE: Here is where you install your plugins.
-require('lazy').setup({
-  -- -- -- -- -- -- -- -- -- -- -- --
-  -- mini.nvim
-  -- contain several styles and tools
-  -- ai surround statusline tabline indentscope
-  require 'plugins.mini',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- theme and style
+require 'theme.colorscheme'
 
-  -- -- -- -- -- -- -- -- -- -- -- --
-  -- theme and style
-  require 'theme.colorscheme',
+require 'theme.smoothcursor'
 
-  require 'theme.smoothcursor',
+require 'theme.smearcursor'
 
-  require 'theme.smearcursor',
+require 'theme.starter'
 
-  -- -- -- -- -- -- -- -- -- -- -- --
-  -- texts style
-  require 'plugins.style.gitsigns',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- mini.nvim
+-- contain several styles and tools
+-- ai surround statusline tabline indentscope
+require 'plugins.mini'
 
-  require 'plugins.style.todo-comments',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- language tools
+-- lsp format cmp treesitter dbg lint
+require 'plugins.language.lspconfig'
 
-  require 'plugins.style.render-markdown',
-  -- -- -- -- -- -- -- -- -- -- -- --
-  -- useful tools
-  require 'plugins.tools.im',
+require 'plugins.language.conform'
 
-  require 'plugins.tools.neo-tree',
+require 'plugins.language.blink-cmp'
 
-  require 'plugins.tools.which-key',
+require 'plugins.language.treesitter'
 
-  require 'plugins.tools.telescope',
+require 'plugins.language.debug'
 
-  require 'plugins.tools.lastplace',
+require 'plugins.language.lint'
 
-  require 'plugins.tools.autopairs',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- texts style
+require 'plugins.style.gitsigns'
 
-  require 'plugins.tools.toggleterm',
+require 'plugins.style.todo-comments'
 
-  -- AI Agent
-  require 'plugins.tools.codecompanion',
+require 'plugins.style.render-markdown'
 
-  -- -- -- -- -- -- -- -- -- -- -- --
-  -- language tools
-  -- lsp format cmp treesitter dbg lint
-  require 'plugins.language.lspconfig',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- useful tools
+require 'plugins.tools.im'
 
-  require 'plugins.language.conform',
+require 'plugins.tools.neo-tree'
 
-  require 'plugins.language.blink-cmp',
+require 'plugins.tools.which-key'
 
-  require 'plugins.language.treesitter',
+require 'plugins.tools.telescope'
 
-  require 'plugins.language.debug',
+require 'plugins.tools.lastplace'
 
-  require 'plugins.language.lint',
+require 'plugins.tools.autopairs'
 
-  -- language plugins and custom
-  require 'plugins.custom.markdown-preview',
-  require 'plugins.custom.typst-preview',
-  require 'plugins.custom.vimtex',
-  require 'plugins.custom.csvview',
+-- -- -- -- -- -- -- -- -- -- -- --
+-- ai assistant
+require 'plugins.ai.codecompanion'
 
-  -- ipython
-  require 'plugins.custom.ipython',
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
+require 'plugins.ai.minuet-ai'
+
+-- -- -- -- -- -- -- -- -- -- -- --
+-- language plugins and custom
+require 'plugins.custom.csvview'
 
 -- vim: ts=2 sts=2 sw=2 et

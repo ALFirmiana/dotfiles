@@ -1,17 +1,13 @@
+local function gh(repo) return 'https://github.com/' .. repo end
+
 local uname = vim.uv.os_uname()
 
 if uname.sysname == 'Linux' then
-  return {
-    'h-hg/fcitx.nvim',
-  }
+  vim.pack.add { gh 'h-hg/fcitx.nvim' }
+  require('fcitx').setup {}
 elseif uname.sysname == 'Darwin' then
-  return {
-    'keaising/im-select.nvim',
-    config = function()
-      require('im_select').setup {}
-    end,
-  }
+  vim.pack.add { gh 'keaising/im-select.nvim' }
+  require('im_select').setup {}
 end
 
--- Return nil for other systems
-return nil
+-- vim: ts=2 sts=2 sw=2 et
