@@ -27,6 +27,8 @@ require 'plugins.language.treesitter'
 
 require 'plugins.language.debug'
 
+require 'plugins.language.mason'
+
 require 'plugins.language.lint'
 
 -- -- -- -- -- -- -- -- -- -- -- --
