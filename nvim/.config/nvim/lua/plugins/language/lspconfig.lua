@@ -119,7 +119,16 @@ local servers = {
     },
   },
 
-  rust_analyzer = {},
+  rust_analyzer = {
+    settings = {
+      ['rust-analyzer'] = {
+        check = {
+          command = 'clippy',
+          extraArgs = { '--no-deps' },
+        },
+      },
+    },
+  },
 
   nil_ls = {},
 
