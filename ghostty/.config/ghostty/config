@@ -27,8 +27,6 @@ clipboard-read = allow
 shell-integration-features = ssh-env,ssh-terminfo
 
 keybind = ctrl+shift+tab=next_tab
-keybind = ctrl+shift+t=new_tab
-keybind = ctrl+shift+w=close_tab
 keybind = ctrl+shift+page_up=scroll_page_up
 keybind = ctrl+shift+page_down=scroll_page_down
 keybind = ctrl+shift+up=scroll_page_lines:-1
