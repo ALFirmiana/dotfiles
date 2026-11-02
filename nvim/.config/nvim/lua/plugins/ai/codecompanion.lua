@@ -39,6 +39,10 @@ require('codecompanion').setup {
           mcpServers = {},
           -- The first `session/new` boots the whole harness, so leave headroom
           timeout = 60000,
+          session_config_options = {
+            model = 'deepseek-official/deepseek-flash',
+            thought_level = 'high',
+          },
         },
 
         -- Sent verbatim as the `initialize` params; `protocolVersion` is
