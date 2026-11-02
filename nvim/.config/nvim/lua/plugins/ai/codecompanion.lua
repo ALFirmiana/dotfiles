@@ -84,6 +84,9 @@ require('codecompanion').setup {
       },
     },
   },
+  prompt_library = {
+    markdown = { dirs = { vim.fs.joinpath(vim.fn.stdpath 'config', 'lua/plugins/ai/prompts') } },
+  },
   opts = {
     language = 'Chinese',
   },
@@ -92,7 +95,7 @@ require('codecompanion').setup {
 vim.keymap.set('n', '<leader>aa', '<cmd>CodeCompanionChat Toggle<cr>', { desc = 'Toggle AI chat (dsh)' })
 vim.keymap.set('n', '<leader>an', '<cmd>CodeCompanionChat<cr>', { desc = 'New AI chat (dsh)' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ai', '<cmd>CodeCompanion<cr>', { desc = 'AI inline prompt (dsh)' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ae', '<cmd>CodeCompanion /explain<cr>', { desc = 'AI explain code (dsh)' })
+vim.keymap.set('v', '<leader>ae', '<cmd>CodeCompanion /explain-zh<cr>', { desc = 'AI explain code (中文)' })
 vim.keymap.set('n', '<leader>ap', '<cmd>CodeCompanionActions<cr>', { desc = 'AI action palette' })
 
 -- vim: ts=2 sts=2 sw=2 et
