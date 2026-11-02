@@ -18,6 +18,8 @@ bell-features = no-audio,no-system
 
 clipboard-read = allow
 
+macos-option-as-alt = left
+
 # ===== SSH =====
 # 远端没有 xterm-ghostty 的 terminfo 时，登录会报
 #   'xterm-ghostty': unknown terminal type.

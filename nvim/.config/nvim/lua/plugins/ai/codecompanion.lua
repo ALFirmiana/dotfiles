@@ -80,11 +80,15 @@ require('codecompanion').setup {
       },
     },
   },
+  opts = {
+    language = 'Chinese',
+  },
 }
 
 vim.keymap.set('n', '<leader>aa', '<cmd>CodeCompanionChat Toggle<cr>', { desc = 'Toggle AI chat (dsh)' })
 vim.keymap.set('n', '<leader>an', '<cmd>CodeCompanionChat<cr>', { desc = 'New AI chat (dsh)' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ai', '<cmd>CodeCompanion<cr>', { desc = 'AI inline prompt (dsh)' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ae', '<cmd>CodeCompanion /explain<cr>', { desc = 'AI explain code (dsh)' })
 vim.keymap.set('n', '<leader>ap', '<cmd>CodeCompanionActions<cr>', { desc = 'AI action palette' })
 
 -- vim: ts=2 sts=2 sw=2 et
