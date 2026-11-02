@@ -26,6 +26,10 @@
       "rev": "f190de76d2eca0380ddcb2425cd582d740699b55",
       "src": "https://github.com/hat0uma/csvview.nvim"
     },
+    "fcitx.nvim": {
+      "rev": "72cf374c6011a7f2e0bc5f896adba4e62700e41c",
+      "src": "https://github.com/h-hg/fcitx.nvim"
+    },
     "fidget.nvim": {
       "rev": "9e0201673e08e997e7cf52afca5565c70bd117f3",
       "src": "https://github.com/j-hui/fidget.nvim"
