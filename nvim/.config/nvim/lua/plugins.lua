@@ -8,6 +8,7 @@ require 'theme.smearcursor'
 
 require 'theme.starter'
 
+require 'theme.neoscroll'
 -- -- -- -- -- -- -- -- -- -- -- --
 -- mini.nvim
 -- contain several styles and tools
@@ -27,6 +28,7 @@ require 'plugins.language.treesitter'
 
 require 'plugins.language.debug'
 
+-- Mason is skipped automatically on NixOS; see the guard inside mason.lua
 require 'plugins.language.mason'
 
 require 'plugins.language.lint'
