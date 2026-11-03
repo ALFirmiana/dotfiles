@@ -60,8 +60,8 @@ vim.keymap.set('n', '<C-S-l>', '<Cmd>bnext<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>dd', function() require('mini.bufremove').delete(0, false) end, { desc = 'Close current buffer' })
 
 -- Quick move
--- vim.keymap.set({ 'v', 'n' }, 'J', '5gj')
--- vim.keymap.set({ 'v', 'n' }, 'K', '5gk')
+vim.keymap.set({ 'v', 'n' }, 'J', '5gj')
+vim.keymap.set({ 'v', 'n' }, 'K', '5gk')
 -- Breakline move
 vim.keymap.set({ 'v', 'n' }, 'j', 'gj')
 vim.keymap.set({ 'v', 'n' }, 'k', 'gk')
