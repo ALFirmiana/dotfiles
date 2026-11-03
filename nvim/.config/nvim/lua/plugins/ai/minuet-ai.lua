@@ -35,8 +35,10 @@ require('minuet').setup {
     },
   },
   n_completions = 1,
-  request_timeout = 3,
-  context_window = 4000,
+  debounce = 100,
+  throttle = 250,
+  request_timeout = 5,
+  context_window = 2500,
 }
 
 -- vim: ts=2 sts=2 sw=2 et
