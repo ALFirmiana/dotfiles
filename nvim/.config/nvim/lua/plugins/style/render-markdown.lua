@@ -7,6 +7,7 @@ vim.pack.add {
   gh 'nvim-mini/mini.nvim',
 }
 require('render-markdown').setup {
+  file_types = { 'markdown', 'codecompanion' },
   -- code = {
   --   disable_background = true,
   --   highlight_border = false,
