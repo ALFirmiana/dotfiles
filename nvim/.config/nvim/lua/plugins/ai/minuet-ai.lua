@@ -21,7 +21,7 @@ require('minuet').setup {
       name = 'DeepSeek',
       end_point = 'https://api.deepseek.com/beta/completions',
       model = 'deepseek-flash',
-      optional = { max_tokens = 256, top_p = 0.9 },
+      optional = { max_tokens = 256, top_p = 0.9, stop = { '\n\n' } },
     },
   },
   virtualtext = {
@@ -38,7 +38,7 @@ require('minuet').setup {
   debounce = 100,
   throttle = 250,
   request_timeout = 5,
-  context_window = 2500,
+  context_window = 16000,
 }
 
 -- vim: ts=2 sts=2 sw=2 et
