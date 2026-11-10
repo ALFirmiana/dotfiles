@@ -1,0 +1,53 @@
+// ─────────────────────────────────────────────
+// Zellij 基础配置
+// 文档：https://zellij.dev/documentation/
+// 部署：cd ~/dotfiles && stow zellij
+// 校验：zellij setup --check
+// ─────────────────────────────────────────────
+
+// ===== 外观 =====
+// 与 ghostty / wezterm 的 Catppuccin Macchiato 保持一致
+theme "catppuccin-macchiato"
+
+// 不画窗格边框，只留状态栏，配合半透明背景更干净
+// 想要边框改成 true，或只显示标题行用 pane_frame_style "titles"
+pane_frames false
+
+// 状态栏用简化字符，不依赖 Nerd Font 的箭头字形
+simplified_ui true
+
+// 底部单行状态栏布局（内置 layout）
+default_layout "compact"
+
+// ===== 行为 =====
+// 关掉启动提示和版本更新说明
+show_startup_tips false
+show_release_notes false
+
+// 剪贴板走 macOS pbcopy，不依赖终端的 OSC 52
+copy_command "pbcopy"
+
+// 鼠标：滚轮滚动、点击切换窗格
+mouse_mode true
+
+// 每个 pane 的滚回缓冲行数
+scroll_buffer_size 20000
+
+// 用 nvim 查看/编辑 scrollback（Ctrl s 后按 e）
+scrollback_editor "nvim"
+
+// 会话序列化，退出后可用 zellij --session 恢复
+session_serialization true
+
+// 关闭终端窗口时 detach 而不是杀掉会话（默认值，写出来便于改）
+// on_force_close "quit"
+
+// ===== 键位 =====
+// 默认键位已经够用，这里只做少量追加，不覆盖默认绑定
+keybinds {
+    normal {
+        // Alt + t / w：直接开关 tab，省掉 Ctrl t 前缀
+        bind "Alt t" { NewTab; }
+        bind "Alt w" { CloseTab; }
+    }
+}
