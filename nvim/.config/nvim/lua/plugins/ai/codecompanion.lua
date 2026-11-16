@@ -72,6 +72,9 @@ require('codecompanion').setup {
         llm = function(adapter) return '  (' .. adapter.formatted_name .. ')' end,
         user = '  (Me)',
       },
+      keymaps = {
+        tool_call_details = false,
+      },
     },
     inline = { adapter = 'dsh' },
   },
