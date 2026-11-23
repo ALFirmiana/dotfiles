@@ -58,4 +58,17 @@ vim.api.nvim_create_autocmd('PackChanged', {
   end,
 })
 
+-- [[ Plugin maintenance keymap ]]
+-- `:packupdate` (Nvim 0.13+) is just a command wrapper around
+--  `vim.pack.update()`, which shows pending updates in a new tabpage: review
+--  it, then `:write` to apply or `:quit` to discard. Use the command when it
+--  exists so this keeps tracking upstream behavior.
+vim.keymap.set('n', '<leader>pu', function()
+  if vim.fn.exists ':packupdate' == 2 then
+    vim.cmd 'packupdate'
+  else
+    vim.pack.update()
+  end
+end, { desc = '[P]lugin [U]pdate' })
+
 -- vim: ts=2 sts=2 sw=2 et

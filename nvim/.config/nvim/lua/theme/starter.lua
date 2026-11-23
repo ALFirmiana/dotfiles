@@ -206,10 +206,15 @@ local function leading_pad(line) return #((line or ''):match '^( *)') end
 -- Pad the start screen currently has in `buf`.
 local function current_pad(buf) return leading_pad((vim.api.nvim_buf_get_lines(buf, 0, 1, false))[1]) end
 
--- Pad the `aligning` hook would use for `buf` displayed in `win`.
+-- Pad the `aligning` hook would use for `buf` displayed in `win`. Returns `nil`
+-- when `buf` is not a live starter buffer: `:restart` restores a buffer whose
+-- 'filetype' is still `ministarter` but whose state mini.starter never rebuilt,
+-- and `get_content()` raises on those. Treating them as "skip" keeps this
+-- autocommand from throwing inside `vim.schedule()`, where any error is
+-- reported as a scary callback traceback.
 local function centered_pad(buf, win)
-  local content = starter.get_content(buf)
-  if not content then return current_pad(buf) end
+  local ok, content = pcall(starter.get_content, buf)
+  if not ok or not content then return nil end
 
   local lines = starter.content_to_lines(content)
   local pad = leading_pad(lines[1])
@@ -227,7 +232,8 @@ local function reflow()
     reflow_scheduled = false
     for _, win in ipairs(vim.api.nvim_list_wins()) do
       local buf = vim.api.nvim_win_get_buf(win)
-      if vim.bo[buf].filetype == 'ministarter' and current_pad(buf) ~= centered_pad(buf, win) then
+      local want_pad = vim.bo[buf].filetype == 'ministarter' and centered_pad(buf, win) or nil
+      if want_pad and current_pad(buf) ~= want_pad then
         -- `refresh()` only *adds* highlight extmarks, so drop the old ones to
         -- keep them from piling up on every layout change.
         vim.api.nvim_buf_clear_namespace(buf, -1, 0, -1)
