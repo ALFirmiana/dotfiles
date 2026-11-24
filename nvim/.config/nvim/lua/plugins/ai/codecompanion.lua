@@ -40,7 +40,10 @@ require('codecompanion').setup {
           -- The first `session/new` boots the whole harness, so leave headroom
           timeout = 60000,
           session_config_options = {
-            model = 'deepseek-official/deepseek-flash',
+            -- ACP model values are opaque `[provider, model]` JSON pairs; the
+            -- model's display name (e.g. 'DeepSeek-V4.1-Flash') also works. A
+            -- bare id like 'deepseek-flash' is silently ignored.
+            model = '["deepseek-official","deepseek-flash"]',
             thought_level = 'high',
           },
         },
