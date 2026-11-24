@@ -58,17 +58,27 @@ vim.api.nvim_create_autocmd('PackChanged', {
   end,
 })
 
--- [[ Plugin maintenance keymap ]]
+-- [[ Plugin maintenance keymaps ]]
+-- Both land in the same review tabpage: `:write` to apply, `:quit` to discard.
+--
+--   <leader>pu  update to the latest upstream revision (rewrites the lockfile)
+--   <leader>ps  sync to `nvim-pack-lock.json` (use after pulling it from
+--               another machine; does not care what upstream currently is)
+--
 -- `:packupdate` (Nvim 0.13+) is just a command wrapper around
---  `vim.pack.update()`, which shows pending updates in a new tabpage: review
---  it, then `:write` to apply or `:quit` to discard. Use the command when it
---  exists so this keeps tracking upstream behavior.
-vim.keymap.set('n', '<leader>pu', function()
-  if vim.fn.exists ':packupdate' == 2 then
+--  `vim.pack.update()`. Use it when it exists for the "latest" case so this
+--  keeps tracking upstream behavior; there is no command equivalent for the
+--  lockfile target, so call the Lua API directly.
+local function pack_update(target)
+  if target == 'version' and vim.fn.exists ':packupdate' == 2 then
     vim.cmd 'packupdate'
-  else
-    vim.pack.update()
+    return
   end
-end, { desc = '[P]lugin [U]pdate' })
+  vim.pack.update(nil, { target = target })
+end
+
+vim.keymap.set('n', '<leader>pu', function() pack_update 'version' end, { desc = '[P]lugin [U]pdate to latest' })
+
+vim.keymap.set('n', '<leader>ps', function() pack_update 'lockfile' end, { desc = '[P]lugin [S]ync to lockfile' })
 
 -- vim: ts=2 sts=2 sw=2 et
